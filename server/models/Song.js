@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const SongSchema = new mongoose.Schema({
     title:{
-        Name:String,
+        type:String,
         required:true
     },
     duration:{
@@ -20,7 +20,7 @@ const SongSchema = new mongoose.Schema({
     artistIds:{
         // mongoose.Schema.Types.ObjectId is used to reference unique IDs of another mongoose schema
         type:mongoose.Schema.Types.ObjectId,
-        ref: Artist
+        ref: "Artist"
     },
     likes:{
         type:Map,
@@ -33,7 +33,7 @@ const SongSchema = new mongoose.Schema({
     type:{
         type:String,
         required:true,
-        default:song
+        default:"song"
     }
 });
 const song=mongoose.model("Song",SongSchema);
