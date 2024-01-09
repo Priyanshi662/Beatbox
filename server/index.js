@@ -10,10 +10,10 @@ const app=express();
 dotenv.config();
 app.use(express.json());
 app.use(cors());
-app.use("app/songs",songsRouter);
-app.use("app/playlist",playlistRouter);
-app.use("app/artists",ArtistRouter);
-app.use("app/user",userRouter);
+app.use("app/songs/",songsRouter);
+app.use("app/playlists/",playlistRouter);
+app.use("app/artists/",ArtistRouter);
+app.use("app/users/",userRouter);
 dbconnect();
 const port=process.env.PORT || 5000;
 
