@@ -33,5 +33,7 @@ const getArtistandSongs= async (req,res)=>{
 	res.status(200).json({...artist._doc,songs:songexist});
 }
 export{
-	getArtists
+	getArtists,
+	getArtistandSongs,
+	getTopArtists
 }

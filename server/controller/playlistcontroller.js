@@ -66,7 +66,7 @@ const editPlaylist = async (req,res) =>{
     const {id} =req.params;
     const userId= req.user.id;
     const {title,description,songIds}= req.body;
-    if(!title || !songId)
+    if(!title || !songIds)
         res.status(400).json({message:"All fields are required"});
     const currplaylist =await playlist.findById(id);
     if(!currplaylist)
