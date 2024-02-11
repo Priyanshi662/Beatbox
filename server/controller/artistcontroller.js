@@ -1,7 +1,7 @@
 import Artist from "../models/Artists.js";
 import Song from "../models/Song.js";
 
-const getArtistes = async (req, res) => {
+const getArtists = async (req, res) => {
 	const artists = await Artist.find();
 
 	if (!artists) {
@@ -10,3 +10,6 @@ const getArtistes = async (req, res) => {
 
 	res.status(200).json(artists);
 };
+export{
+	getArtists
+}

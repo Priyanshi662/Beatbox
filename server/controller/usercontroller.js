@@ -1,6 +1,8 @@
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import User from '../models/User.js';
+import Song from '../models/Song.js';
 
 const loginUser=async (req,res)=>{
     const {username,password}=req.body;
@@ -52,3 +54,22 @@ const registerUser=async (req,res) =>{
     }
     return res.status(200).json({user:returnUser,token:accessToken});
 }
+const getFavourites=async (req,res)=>{
+    const {id}= req.user
+    const user=await User.findById(id);
+    if(!user)
+        return res.status(400).json({message:"User not found"});
+    const favorites=await Promise.all(
+        user.favorites.map((id)=>{
+            Song.findById(id)
+        })
+    );
+    if(!favorites)
+        return res.status(400).json({message:"favorites not found"});
+    return res.status(200).json(favorites);
+}
+export{
+    loginUser,
+    registerUser,
+    getFavourites
+};
