@@ -11,7 +11,7 @@ const ArtistSchema=new mongoose.Schema({
     type:{
         type:String,
         required:true,
-        default:Artist
+        default:"Artist"
     },
     bio:{
         type:String

@@ -73,8 +73,8 @@ function shuffleArray(array) {
 const getRandomSongs= async (req,res) =>{
     const songs= Song.find({});
     const shuffled=shuffleArray(songs);
-    const res=shuffled.splice(1,11);
-    res.status(200).json(res);
+    const resl=shuffled.splice(1,11);
+    res.status(200).json(resl);
 }
 const likeSong= async (req,res)=>{
     try{

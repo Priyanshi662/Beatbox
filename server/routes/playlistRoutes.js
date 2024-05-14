@@ -1,6 +1,6 @@
 import express from 'express';
-import { createplaylist,editPlaylist,getPlaylist,getPlaylists } from '../controller/playlistcontroller';
-import verifyToken from '../middleware/verifyToken';
+import { createplaylist,editPlaylist,getPlaylist,getPlaylists } from '../controller/playlistcontroller.js';
+import {verifyToken} from '../middleware/verifyToken.js';
 
 const router= express.Router();
 router.get('/all',getPlaylists);
