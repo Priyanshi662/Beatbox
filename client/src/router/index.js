@@ -1,6 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
+import {Home} from "../pages/HomePage.jsx";
 
-const router=createBrowserRouter([
+export const router=createBrowserRouter([
     {
         path:"/",
         element:<Home/>,
