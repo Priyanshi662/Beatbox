@@ -5,7 +5,7 @@ import {PersistGate } from 'redux-persist/integration/react';
 import {persistStore} from 'redux-persist';
 import { Provider } from 'react-redux'
 import {RouterProvider} from 'react-router-dom';
-// import { router} from './router/index.js';
+import { router} from './router/index.js';
 
 function App() {
   return (
