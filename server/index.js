@@ -11,11 +11,14 @@ const app=express();
 dotenv.config();
 app.use(express.json());
 app.use(cors());
+
+dbconnect();
+
 app.use("app/songs/",songsRouter);
 app.use("app/playlists/",playlistRouter);
 app.use("app/artists/",artistRouter);
 app.use("app/users/",userRouter);
-dbconnect();
+
 const port=process.env.PORT || 5000;
 
 app.listen(port,async ()=>{

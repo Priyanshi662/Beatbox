@@ -111,4 +111,12 @@ const likeSong= async (req,res)=>{
         return res.status(400).json(({message:error.message}));
     }
 }
-export {getAllSongs, likeSong,topSongs,getNewReleases,getRandomSongs};
+const getAroundYou = async (req, res) => {
+	const songs = await Song.find({});
+
+	const result = songs.slice(0, 11);
+	const shuffledSongs = result.sort(() => (Math.random() > 0.5 ? 1 : -1));
+
+	res.status(200).json(shuffledSongs);
+};
+export {getAllSongs, likeSong,topSongs,getNewReleases,getAroundYou,getRandomSongs};

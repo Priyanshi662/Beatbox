@@ -4,8 +4,8 @@ import {Home} from "../pages/HomePage.jsx";
 export const router=createBrowserRouter([
     {
         path:"/",
-        element:<Home/>,
-        errorElement:<ErrorPage/>,
+        element: <Home/>,
+        errorElement: <ErrorPage/>,
         children:[
             {index:true,element:<Navigate to="/Home" replace />},
             {
