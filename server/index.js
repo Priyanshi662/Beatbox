@@ -22,5 +22,5 @@ app.use("app/users/",userRouter);
 const port=process.env.PORT || 5000;
 
 app.listen(port,async ()=>{
-    console.log("Server is up and running");
+    console.log(`Server is up and running on port : ${port}`);
 })

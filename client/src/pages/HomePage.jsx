@@ -4,7 +4,7 @@ import TopCharts from "../components/TopCharts";
 import Categories from "../components/Categories";
 import Search from "../components/Search";
 import { Grid, GridItem, Hide } from "@chakra-ui/react";
-// import Artists from "../components/Artists";
+import Artists from "../components/Artists";
 
 const HomePage = () => {
 	return (
@@ -18,7 +18,7 @@ const HomePage = () => {
 				<Search />
 				<HomeBanner />
 				<SmallSection title="New Releases" endpoint="/songs/releases" />
-				<artists />
+				<Artists />
 				<SmallSection title="Popular Around You" endpoint="/songs/top" />
 			</GridItem>
 			<GridItem colSpan={3} p={4}>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { AiFillPlayCircle, AiOutlineLoading } from "react-icons/ai";
-// import SongCard from "./SongCard";
+import SongCard from "./SongCard.jsx";
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-// import { client } from "../api";
+import { client } from "../api";
 import { Link } from "react-router-dom";
 
 const SmallSection = ({ title, endpoint }) => {
@@ -16,6 +16,7 @@ const SmallSection = ({ title, endpoint }) => {
 		await client
 			.get(`${endpoint}`)
 			.then((res) => {
+				console.log(res.data);
 				setData(res.data);
 				setLoading(false);
 			})

@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-// import { appear } from "../theme/motionVariants";
+import { appear } from "../theme/motionVariants";
 import { Link } from "react-router-dom";
 
 const HomeBanner = () => {
