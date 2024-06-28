@@ -20,6 +20,7 @@ const TopCharts = () => {
 		await client
 			.get("/songs/top")
 			.then((res) => {
+				console.log("in Top charts",res.data);
 				setData(res.data);
 				setLoading(false);
 			})

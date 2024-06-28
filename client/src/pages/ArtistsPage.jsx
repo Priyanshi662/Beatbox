@@ -5,7 +5,7 @@ import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { client } from "../api";
 
 const ArtistsPage = () => {
-	const [Artists, setArtists] = useState([]);
+	const [artists, setArtists] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 
@@ -13,7 +13,7 @@ const ArtistsPage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/Artists/all")
+			.get("/artists/all")
 			.then((res) => {
 				setArtists(res.data);
 				setLoading(false);
@@ -27,6 +27,9 @@ const ArtistsPage = () => {
 	useEffect(() => {
 		fetchArtists();
 	}, []);
+	useEffect(() => {
+		console.log("artist page:",artists);
+	}, [artists]);
 
 	return (
 		<Box
@@ -46,7 +49,7 @@ const ArtistsPage = () => {
 					Discover new Artists
 				</Text>
 			</Box>
-			{loading && Artists.length < 1 && (
+			{loading && artists.length < 1 && (
 				<Flex align="center" justify="center" color="accent.main" minH="20rem">
 					<AiOutlineLoading className="spin" size={36} />
 				</Flex>
@@ -59,8 +62,8 @@ const ArtistsPage = () => {
 					xl: "repeat(5, 1fr)",
 				}}
 				gap={6}>
-				{Artists.map((Artist) => (
-					<ArtistCard key={Artist._id} Artist={Artist} />
+				{artists.map((artist) => (
+					<ArtistCard key={artist._id} artist={artist} />
 				))}
 			</Grid>
 			{error && (
